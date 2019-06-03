@@ -1,0 +1,9 @@
+dx-text-box{
+    display: inline-block;
+    vertical-align: top;
+}
+
+::ng-deep .dx-toast-content {
+    min-width: 300px;
+    max-width: 400px;
+}

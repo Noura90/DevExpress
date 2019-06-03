@@ -1,0 +1,47 @@
+<dx-validation-group #validationGroup>
+<dx-text-box 
+width="300px"
+[(value)]="name">
+  <dx-validator >
+    <dxi-validation-rule type="required" message="name is required">
+    </dxi-validation-rule>
+    </dx-validator>
+</dx-text-box>
+<dx-button 
+text="DevExtreme Button in Angular"
+(click)= "onClick()"
+[useSubmitBehavior]="true"></dx-button>
+<dx-validation-summary></dx-validation-summary>
+</dx-validation-group>
+<br/> <br/>
+
+<dx-data-grid
+id="employeesList"
+[dataSource]="employees"
+[remoteOperations]= "true"
+[allowColumnReordering]="true"
+[rowAlternationEnabled]="true"
+[showBorders]="true">
+  <dxo-search-panel 
+  [visible]="true"
+  [highlightCaseSensitive]="true">
+  </dxo-search-panel>
+  <dxo-group-panel [visible]="true"></dxo-group-panel>
+  <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+  <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+  <dxo-column-chooser
+  [enabled]="true"
+  mode="select"
+  title="Displayed Columns"></dxo-column-chooser>
+  <dxi-column dataField="userId" alignment="center"></dxi-column>
+  <dxi-column dataField="jobTitleName"></dxi-column>
+  <dxi-column dataField="firstName"></dxi-column>
+  <dxi-column dataField="lastName"></dxi-column>
+  <dxi-column dataField="preferredFullName"></dxi-column>
+  <dxi-column dataField="employeeCode"></dxi-column>
+  <dxi-column dataField="region"></dxi-column>
+  <dxi-column dataField="phoneNumber"></dxi-column>
+  <dxi-column dataField="emailAddress"></dxi-column>
+</dx-data-grid>
+
+
